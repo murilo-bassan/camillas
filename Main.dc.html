@@ -1,0 +1,281 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap">
+<style>
+  :root{
+    --red:#E31E24; --red-dark:#A80F16; --red-tint:#FDEAEA;
+    --blue:#0D3B8C; --blue-dark:#082A66; --blue-tint:#EAF0FB;
+    --cream:#FFFBF5; --ink:#221A17; --gray:#6B615C;
+    --whatsapp:#25D366; --whatsapp-dark:#1DA851;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Nunito Sans',sans-serif;color:var(--ink);background:var(--cream);}
+  h1,h2,h3{font-family:'Fredoka',sans-serif;margin:0;}
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  a.link:hover{opacity:0.8;}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:100px;font-family:'Nunito Sans',sans-serif;font-weight:800;font-size:17px;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease;white-space:nowrap;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-whatsapp{background:var(--whatsapp);color:#fff;box-shadow:0 8px 20px rgba(37,211,102,0.35);}
+  .btn-whatsapp:hover{background:var(--whatsapp-dark);}
+  .btn-outline{background:transparent;color:#fff;border:2.5px solid rgba(255,255,255,0.85);}
+  .btn-outline:hover{background:rgba(255,255,255,0.12);}
+  .btn-red{background:#fff;color:var(--red);box-shadow:0 8px 20px rgba(0,0,0,0.15);}
+  .pill{display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border-radius:100px;font-weight:700;font-size:14px;}
+  .card-shadow{box-shadow:0 20px 45px rgba(21,15,10,0.10);}
+  .dept-grid{display:grid;grid-template-columns:repeat(4, minmax(0, 1fr));gap:24px;}
+  .kits-grid{display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:28px;}
+  .main-nav{display:flex;align-items:center;gap:32px;}
+  @media (max-width:900px){
+    .dept-grid{grid-template-columns:repeat(2, minmax(0, 1fr));}
+    .kits-grid{grid-template-columns:minmax(0, 1fr);}
+    .main-nav{display:none;}
+  }
+  @media (max-width:560px){
+    .dept-grid{grid-template-columns:minmax(0, 1fr);}
+    .hero-title{font-size:36px !important;}
+  }
+</style>
+</helmet>
+
+<div style="width:100%;background:var(--cream);display:flex;flex-direction:column;">
+
+  <!-- HEADER -->
+  <header style="position:sticky;top:0;z-index:50;width:100%;background:#fff;border-bottom:4px solid var(--red);display:flex;justify-content:center;">
+    <div style="width:100%;max-width:1180px;padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <img src="logo_small.png" alt="Camila Supermercados" style="height:56px;width:auto;display:block;">
+      <nav class="main-nav">
+        <a class="link" href="#inicio" style="font-weight:700;font-size:15px;color:var(--ink);">Início</a>
+        <a class="link" href="#departamentos" style="font-weight:700;font-size:15px;color:var(--ink);">Departamentos</a>
+        <a class="link" href="#ofertas" style="font-weight:700;font-size:15px;color:var(--ink);">Ofertas</a>
+        <a class="link" href="#contato" style="font-weight:700;font-size:15px;color:var(--ink);">Contato</a>
+      </nav>
+      <a class="btn btn-whatsapp" href="https://wa.me/556733177945" target="_blank" style="padding:12px 22px;font-size:15px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 11.5a8.5 8.5 0 1 1-15.9-4.2L3 20l12.9-1.5A8.5 8.5 0 0 1 20.5 11.5Z"/><path d="M8.5 8.8c.2 3 3.7 6.4 6.7 6.6.9.1 1.6-.6 1.5-1.4l-1.9-1.1c-.3-.2-.7-.1-.9.1l-.6.7c-1.2-.6-2.3-1.7-2.9-2.9l.7-.6c.2-.2.3-.6.1-.9L9.9 7.3c-.2-.5-.9-.6-1.4-.1"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="inicio" style="width:100%;background:linear-gradient(180deg,var(--blue) 0%,var(--blue-dark) 100%);display:flex;justify-content:center;position:relative;overflow:hidden;">
+    <div style="position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:rgba(227,30,36,0.18);"></div>
+    <div style="position:absolute;left:-140px;bottom:-160px;width:380px;height:380px;border-radius:50%;background:rgba(255,255,255,0.06);"></div>
+    <div style="width:100%;max-width:1180px;padding:76px 32px 88px;display:flex;align-items:center;gap:56px;position:relative;flex-wrap:wrap;">
+      <div style="flex:1 1 460px;display:flex;flex-direction:column;gap:22px;min-width:320px;">
+        <div class="pill" style="background:rgba(255,255,255,0.14);color:#fff;align-self:flex-start;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-7.4 7-12.5A7 7 0 0 0 5 9.5C5 14.6 12 22 12 22Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          Cophasul e região · Campo Grande, MS
+        </div>
+        <h1 class="hero-title" style="color:#fff;font-size:52px;line-height:1.08;font-weight:700;">Frescor e economia<br>todos os dias.</h1>
+        <p style="color:rgba(255,255,255,0.88);font-size:19px;line-height:1.55;max-width:480px;">Açougue, hortifruti e mercearia completos, com ofertas renovadas todos os dias. Atendendo a Cophasul e região com o carinho de mercado de bairro.</p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;padding-top:8px;">
+          <a class="btn btn-whatsapp" href="https://wa.me/556733177945" target="_blank">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 11.5a8.5 8.5 0 1 1-15.9-4.2L3 20l12.9-1.5A8.5 8.5 0 0 1 20.5 11.5Z"/></svg>
+            Chamar no WhatsApp
+          </a>
+          <a class="btn btn-outline" href="https://www.instagram.com/supermercadoscamila/" target="_blank">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            Seguir no Instagram
+          </a>
+        </div>
+      </div>
+      <div style="flex:0 0 auto;display:flex;justify-content:center;min-width:280px;">
+        <div class="card-shadow" style="background:#fff;border-radius:28px;padding:36px 30px;transform:rotate(-3deg);">
+          <img src="logo_small.png" alt="Camila Supermercados" style="width:300px;height:auto;display:block;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPARTAMENTOS -->
+  <section id="departamentos" style="width:100%;background:#fff;display:flex;justify-content:center;">
+    <div style="width:100%;max-width:1180px;padding:88px 32px;display:flex;flex-direction:column;gap:44px;">
+      <div style="display:flex;flex-direction:column;gap:10px;align-items:center;text-align:center;">
+        <span style="color:var(--red);font-weight:800;letter-spacing:0.08em;font-size:14px;text-transform:uppercase;">O que você encontra</span>
+        <h2 style="font-size:38px;color:var(--ink);">Nossos Departamentos</h2>
+      </div>
+      <div class="dept-grid">
+
+        <div class="card-shadow" style="background:var(--cream);border-radius:20px;padding:32px 24px;display:flex;flex-direction:column;gap:14px;">
+          <div style="width:56px;height:56px;border-radius:16px;background:var(--red);display:flex;align-items:center;justify-content:center;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 12.5 3 16l2 2 3.5-3.5"/><path d="M9 10 19 4l1 1-6 10-4-1-1-4Z"/><path d="M9 10 6.5 12.5"/></svg>
+          </div>
+          <h3 style="font-size:20px;color:var(--ink);">Açougue</h3>
+          <p style="color:var(--gray);font-size:15px;line-height:1.5;">Cortes selecionados e atendimento especializado no balcão.</p>
+        </div>
+
+        <div class="card-shadow" style="background:var(--cream);border-radius:20px;padding:32px 24px;display:flex;flex-direction:column;gap:14px;">
+          <div style="width:56px;height:56px;border-radius:16px;background:var(--blue);display:flex;align-items:center;justify-content:center;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4-2-7-6-7-10a7 7 0 0 1 14 0c0 4-3 8-7 10Z"/><path d="M12 12V5"/><path d="M12 8c0-2 1.5-4 4-4"/></svg>
+          </div>
+          <h3 style="font-size:20px;color:var(--ink);">Hortifruti</h3>
+          <p style="color:var(--gray);font-size:15px;line-height:1.5;">Frutas, legumes e verduras fresquinhos toda semana.</p>
+        </div>
+
+        <div class="card-shadow" style="background:var(--cream);border-radius:20px;padding:32px 24px;display:flex;flex-direction:column;gap:14px;">
+          <div style="width:56px;height:56px;border-radius:16px;background:var(--red);display:flex;align-items:center;justify-content:center;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+          </div>
+          <h3 style="font-size:20px;color:var(--ink);">Mercearia</h3>
+          <p style="color:var(--gray);font-size:15px;line-height:1.5;">Tudo para o mês, dos básicos às marcas queridinhas.</p>
+        </div>
+
+        <div class="card-shadow" style="background:var(--cream);border-radius:20px;padding:32px 24px;display:flex;flex-direction:column;gap:14px;">
+          <div style="width:56px;height:56px;border-radius:16px;background:var(--blue);display:flex;align-items:center;justify-content:center;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6l1 5H8l1-5Z"/><path d="M8 8h8l-1 12a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1L8 8Z"/><path d="M8.5 13h7"/></svg>
+          </div>
+          <h3 style="font-size:20px;color:var(--ink);">Bebidas</h3>
+          <p style="color:var(--gray);font-size:15px;line-height:1.5;">Cerveja gelada, refrigerantes e bebidas para toda ocasião.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- KITS & OFERTAS -->
+  <section id="ofertas" style="width:100%;background:var(--blue-tint);display:flex;justify-content:center;">
+    <div style="width:100%;max-width:1180px;padding:80px 32px;display:flex;flex-direction:column;gap:44px;">
+      <div style="display:flex;flex-direction:column;gap:10px;align-items:center;text-align:center;">
+        <span style="color:var(--blue);font-weight:800;letter-spacing:0.08em;font-size:14px;text-transform:uppercase;">Economize toda semana</span>
+        <h2 style="font-size:38px;color:var(--ink);">Kits e Ofertas</h2>
+      </div>
+      <div class="kits-grid">
+
+        <div class="card-shadow" style="background:var(--blue);border-radius:24px;padding:40px;display:flex;flex-direction:column;gap:16px;">
+          <div style="width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,0.16);display:flex;align-items:center;justify-content:center;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M3 11h18"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+          </div>
+          <h3 style="font-size:24px;color:#fff;">Kits Semanais</h3>
+          <p style="color:rgba(255,255,255,0.85);font-size:15.5px;line-height:1.55;">Kits prontos com o que não pode faltar em casa, montados toda semana com economia garantida.</p>
+          <a class="link" href="https://www.instagram.com/supermercadoscamila/" target="_blank" style="color:#fff;font-weight:800;font-size:15px;display:flex;align-items:center;gap:6px;padding-top:6px;">
+            Ver kits no Instagram
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="card-shadow" style="background:var(--red);border-radius:24px;padding:40px;display:flex;flex-direction:column;gap:16px;">
+          <div style="width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,0.16);display:flex;align-items:center;justify-content:center;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="m6.8 5.6 2 3.4"/><path d="m17.2 5.6-2 3.4"/><circle cx="12" cy="14" r="8"/><path d="M12 10v4l3 2"/></svg>
+          </div>
+          <h3 style="font-size:24px;color:#fff;">Ofertas Todos os Dias</h3>
+          <p style="color:rgba(255,255,255,0.85);font-size:15.5px;line-height:1.55;">Preços especiais renovados todos os dias, sempre divulgados primeiro no WhatsApp e Instagram.</p>
+          <a class="link" href="https://wa.me/556733177945" target="_blank" style="color:#fff;font-weight:800;font-size:15px;display:flex;align-items:center;gap:6px;padding-top:6px;">
+            Ver ofertas de hoje
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM / SOCIAL PROOF -->
+  <section style="width:100%;background:#fff;display:flex;justify-content:center;">
+    <div style="width:100%;max-width:1180px;padding:80px 32px;display:flex;justify-content:center;">
+      <div class="card-shadow" style="width:100%;max-width:760px;background:var(--cream);border-radius:28px;padding:44px;display:flex;flex-direction:column;gap:24px;">
+        <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+          <div style="width:64px;height:64px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:2px;flex:1 1 200px;">
+            <span style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:19px;color:var(--ink);">@supermercadoscamila</span>
+            <span style="color:var(--gray);font-size:14.5px;font-weight:700;">5.438 seguidores</span>
+          </div>
+          <a class="btn btn-red" href="https://www.instagram.com/supermercadoscamila/" target="_blank" style="padding:11px 22px;font-size:15px;">Seguir no Instagram</a>
+        </div>
+        <p style="color:var(--ink);font-size:16px;line-height:1.7;white-space:pre-line;">🛒 Supermercado em Campo Grande MS
+🥩 Açougue • Hortifruti • Mercearia
+💰 Ofertas todos os dias
+📍 Cophasul e região</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;">
+          <span class="pill" style="background:var(--blue-tint);color:var(--blue);">Hortifruti</span>
+          <span class="pill" style="background:var(--red-tint);color:var(--red);">Bebidas</span>
+          <span class="pill" style="background:var(--blue-tint);color:var(--blue);">Kits Semanais</span>
+          <span class="pill" style="background:var(--red-tint);color:var(--red);">Camila Express</span>
+          <span class="pill" style="background:var(--blue-tint);color:var(--blue);">Dicas da Camila</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" style="width:100%;background:var(--cream);display:flex;justify-content:center;">
+    <div style="width:100%;max-width:1180px;padding:20px 32px 96px;display:flex;gap:28px;flex-wrap:wrap;">
+
+      <div style="flex:1 1 420px;display:flex;flex-direction:column;gap:26px;min-width:300px;">
+        <h2 style="font-size:34px;color:var(--ink);">Venha nos visitar</h2>
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <div style="display:flex;align-items:flex-start;gap:14px;">
+            <div style="width:40px;height:40px;border-radius:12px;background:var(--red-tint);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-7.4 7-12.5A7 7 0 0 0 5 9.5C5 14.6 12 22 12 22Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:2px;">
+              <span style="font-weight:800;font-size:15.5px;">Endereço</span>
+              <span style="color:var(--gray);font-size:15px;">Cophasul e região, Campo Grande - MS</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:14px;">
+            <div style="width:40px;height:40px;border-radius:12px;background:var(--red-tint);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 11.5a8.5 8.5 0 1 1-15.9-4.2L3 20l12.9-1.5A8.5 8.5 0 0 1 20.5 11.5Z"/></svg>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:2px;">
+              <span style="font-weight:800;font-size:15.5px;">WhatsApp</span>
+              <a class="link" href="https://wa.me/556733177945" target="_blank" style="color:var(--gray);font-size:15px;">(67) 3317-7945</a>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:14px;">
+            <div style="width:40px;height:40px;border-radius:12px;background:var(--red-tint);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:2px;">
+              <span style="font-weight:800;font-size:15.5px;">Instagram</span>
+              <a class="link" href="https://www.instagram.com/supermercadoscamila/" target="_blank" style="color:var(--gray);font-size:15px;">@supermercadoscamila</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="flex:1 1 380px;min-width:300px;display:flex;">
+        <div class="card-shadow" style="width:100%;background:var(--red);border-radius:28px;padding:44px;display:flex;flex-direction:column;gap:16px;justify-content:center;">
+          <h3 style="color:#fff;font-size:26px;">Fale agora com a gente</h3>
+          <p style="color:rgba(255,255,255,0.88);font-size:15.5px;line-height:1.55;">Dúvidas, encomendas ou ofertas do dia — é só chamar no WhatsApp.</p>
+          <a class="btn" href="https://wa.me/556733177945" target="_blank" style="background:#fff;color:var(--red);align-self:flex-start;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 11.5a8.5 8.5 0 1 1-15.9-4.2L3 20l12.9-1.5A8.5 8.5 0 0 1 20.5 11.5Z"/></svg>
+            Chamar no WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="width:100%;background:var(--blue-dark);display:flex;justify-content:center;">
+    <div style="width:100%;max-width:1180px;padding:44px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:16px;">
+        <img src="logo_small.png" alt="Camila Supermercados" style="height:40px;width:auto;display:block;border-radius:8px;">
+        <span style="color:rgba(255,255,255,0.6);font-size:14px;">© 2026 Camila Supermercados</span>
+      </div>
+      <div style="display:flex;gap:14px;">
+        <a href="https://wa.me/556733177945" target="_blank" style="width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 11.5a8.5 8.5 0 1 1-15.9-4.2L3 20l12.9-1.5A8.5 8.5 0 0 1 20.5 11.5Z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/supermercadoscamila/" target="_blank" style="width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>
